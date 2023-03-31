@@ -11,13 +11,15 @@ int peakIndex(int arr[], int size){
         if(arr[mid] < arr[mid + 1]){ //for the left edge of the mountain.
             s = mid + 1;
         }
-        else
-        { // for the right edge and peak of the mountain.
-            e = mid;
+        else   // for the right edge and peak of the mountain
+        { .
+            e = mid; /* So that the if mid lies on peak index or any where on right side of mountain
+                        then on doing "e = mid - 1", it will take it back to left side.*/
         }
         mid = s + (e-s)/2;
     }
-    return s;
+    return s; //either "s" or "e" can be written cause at the end(last element left) the peak index will point as both "start" and "end";
+
 }
 
 int main()
